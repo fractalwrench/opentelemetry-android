@@ -15,7 +15,7 @@ import okhttp3.Response
  * This class is internal and is hence not for public use. Its APIs are unstable and can change at
  * any time.
  */
-internal class TracingCallback(
+class TracingCallback(
     private val delegate: Callback,
     private val callingContext: Context
 ) : Callback {

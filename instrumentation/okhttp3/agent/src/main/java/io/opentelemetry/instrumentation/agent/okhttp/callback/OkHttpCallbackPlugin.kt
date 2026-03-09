@@ -24,7 +24,9 @@ internal class OkHttpCallbackPlugin : Plugin {
         classFileLocator: ClassFileLocator
     ): DynamicType.Builder<*> {
         return builder.visit(
-            Advice.to(OkHttpCallbackAdvice::class.java)
+            Advice.withCustomMapping()
+                .with(Advice.AssignReturned.Factory())
+                .to(OkHttpCallbackAdvice::class.java)
                 .on(
                     ElementMatchers.named<NamedElement>("enqueue").and(
                         ElementMatchers.takesArgument(
