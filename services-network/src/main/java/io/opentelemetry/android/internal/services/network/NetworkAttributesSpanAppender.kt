@@ -13,7 +13,7 @@ import io.opentelemetry.sdk.trace.SpanProcessor
 /**
  * A [SpanProcessor] implementation that appends a set of [attributes][io.opentelemetry.api.common.Attributes]
  * describing the
- * [current network][io.opentelemetry.android.common.internal.features.networkattributes.data.CurrentNetwork]
+ * [current network][CurrentNetwork]
  * to every span that is exported.
  */
 class NetworkAttributesSpanAppender(
