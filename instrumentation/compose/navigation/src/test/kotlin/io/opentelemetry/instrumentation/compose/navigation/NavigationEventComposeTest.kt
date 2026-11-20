@@ -112,7 +112,7 @@ class NavigationEventComposeTest {
     }
 
     @Test
-    fun `screenName reading arguments tells navigations apart but sees none on attach`() {
+    fun `screenName reading arguments tells navigations apart`() {
         lateinit var navController: NavHostController
         composeRule.setContent {
             navController =
@@ -128,9 +128,7 @@ class NavigationEventComposeTest {
         composeRule.runOnIdle { navController.navigate("user/3") }
         composeRule.waitForIdle()
 
-        // The attach replay carries a null arguments bundle even for a parameterised start
-        // destination, so `id` is unavailable there; real navigations do supply it.
-        assertThat(destinationNames()).containsExactly("user/unknown", "user/2", "user/3")
+        assertThat(destinationNames()).containsExactly("user/1", "user/2", "user/3")
     }
 
     @Test

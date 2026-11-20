@@ -63,4 +63,9 @@ dependencies {
     testImplementation(libs.robolectric)
     testImplementation(libs.androidx.test.core)
     testImplementation(libs.androidx.test.espresso.core)
+
+    constraints {
+        compileOnly("androidx.lifecycle:lifecycle-runtime:2.10.0")
+        testImplementation("androidx.lifecycle:lifecycle-runtime:2.10.0")
+    }
 }
